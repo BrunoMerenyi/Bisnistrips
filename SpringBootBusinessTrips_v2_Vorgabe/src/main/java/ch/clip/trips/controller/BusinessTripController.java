@@ -19,6 +19,8 @@ import ch.clip.trips.repo.BusinessTripRepository;
 
 @RestController
 @RequestMapping("/v1")
+@CrossOrigin(origins = "*")
+
 public class BusinessTripController {
 
 	@Autowired
@@ -31,7 +33,6 @@ public class BusinessTripController {
 
 	
 	// Aggregate root
-	@CrossOrigin(origins = "*")
 	@GetMapping("/trips")
 	// @RequestMapping(value = "/trips", method = RequestMethod.GET, produces =
 	// "application/json")

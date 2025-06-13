@@ -64,6 +64,7 @@ export default function App() {
   const getTrips = async () => {
     const response = await fetch("http://localhost:8080/v1/trips");
     const data = await response.json();
+    console.log(data);
     setTrips(data);
   };
   useEffect(() => {
@@ -71,21 +72,39 @@ export default function App() {
   }, []);
   function renderTrip(t) {
     return (
-      <div className="product" key={t.id}>
-        <figure>
-          <div>
-            <img src={"images/items/" + t.id + ".jpg"} alt="name " />
+      <div
+        className="flex flex-col justify-center items-center p-4 border rounded-lg shadow-md"
+        key={t.id}
+      >
+        <figure className="text-center w-full max-w-sm">
+          <div className="mb-4">
+            <img
+              className="w-full h-48 object-cover rounded"
+              src={"/images/items/" + t.id + ".jpg"}
+              alt="name "
+            />
           </div>
-          <figcaption>
-            <a href="#. . . ">{t.title}</a>
+          <figcaption className="space-y-2">
+            <a
+              href={`/trips/${t.id}`}
+              className="text-lg font-semibold hover:underline"
+            >
+              {t.title}
+            </a>
             <div>
               <span>
-                {t.startTrip[2] + "-" + t.startTrip[1] + "-" + t.startTrip[0]}
+                {t.startTrip && t.startTrip.length >= 3
+                  ? t.startTrip[2] + "-" + t.startTrip[1] + "-" + t.startTrip[0]
+                  : ""}
               </span>
             </div>
-            <p>{t.description}</p>
+            <p className="text-sm text-gray-700">{t.description}</p>
             <div>
-              <button type="button" disabled>
+              <button
+                type="button"
+                disabled
+                className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+              >
                 Add to Triplist
               </button>
             </div>
@@ -99,9 +118,9 @@ export default function App() {
     <>
       <div>
         <Header />
-        <main>
+        <main className="w-full max-w-[1440px] p-5">
           <section id="filters">
-            <label htmlFor="month">Filter by Month:</label>{" "}
+            <label htmlFor="month">Filter by Month:</label>
             <select id="size">
               <option value="">All months</option>
               <option value="1">January</option>
@@ -109,7 +128,9 @@ export default function App() {
               <option value="3">March</option>
             </select>
           </section>
-          <section id="products">{trips.map(renderTrip)}</section>
+          <section id="products" className="grid grid-cols-3 w-full gap-5">
+            {trips.map(renderTrip)}
+          </section>
         </main>
       </div>
       <Footer />

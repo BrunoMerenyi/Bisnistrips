@@ -6,7 +6,9 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <img width="150px" alt="Business Trips" src="/images/logo.png" />
+            <a href="/">
+              <img width="150px" alt="Business Trips" src="/images/logo.png" />
+            </a>
           </li>
         </ul>
       </nav>
