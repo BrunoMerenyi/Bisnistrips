@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 // const trips = [
 //   {
@@ -116,7 +116,7 @@ export default function App() {
 
   return (
     <>
-      <div>
+      <div className="">
         <Header />
         <main className="w-full max-w-[1440px] p-5">
           <section id="filters">
@@ -128,7 +128,10 @@ export default function App() {
               <option value="3">March</option>
             </select>
           </section>
-          <section id="products" className="grid grid-cols-3 w-full gap-5">
+          <section
+            id="products"
+            className="grid lg:grid-cols-3 grid-cols-1 w-full gap-5"
+          >
             {trips.map(renderTrip)}
           </section>
         </main>

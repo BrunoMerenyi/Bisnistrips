@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import { useParams } from "react-router";
-import Footer from "../Footer";
-import Header from "../Header";
+import Footer from "./Footer";
+import Header from "./Header";
 
 function Trip() {
   let { id } = useParams();
