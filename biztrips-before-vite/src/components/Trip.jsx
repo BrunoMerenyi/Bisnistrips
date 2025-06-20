@@ -46,11 +46,24 @@ function Trip() {
             <p className="text-sm text-gray-700">{t.description}</p>
             <div>
               <button
-                type="button"
-                disabled
-                className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+                  type="button"
+                  disabled
+                  className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+                  style={{ marginRight: "50px" }}
               >
                 Add to Triplist
+              </button>
+              <button
+                  type="button"
+                  disabled
+                  className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+                  style={{ marginLeft: "50px" }}
+              >
+                <a
+                    href={`/`}
+                >
+                  Checkout
+                </a>
               </button>
             </div>
           </figcaption>
@@ -58,12 +71,13 @@ function Trip() {
       </div>
     );
   }
+
   return (
-    <>
-      <Header />
-      <section id="products">{renderTrip(trips)}</section>
-      <Footer />
-    </>
+      <>
+        <Header/>
+        <section id="products">{renderTrip(trips)}</section>
+        <Footer/>
+      </>
   );
 }
 
