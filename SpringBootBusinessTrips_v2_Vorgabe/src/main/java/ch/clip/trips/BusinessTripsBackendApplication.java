@@ -80,12 +80,6 @@ public class BusinessTripsBackendApplication {
 
 			wishTrips.add(bt01);
 			wishTrips.add(bt02);
-			
-			
-
-
 		};
 	}
-
-	
 }

@@ -1,17 +1,12 @@
 package ch.clip.trips.controller;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import ch.clip.trips.ex.TriptNotFoundException;
 import ch.clip.trips.model.BusinessTrip;
@@ -46,6 +41,23 @@ public class BusinessTripController {
 	BusinessTrip newProduct(@RequestBody BusinessTrip newTrip) {
 		return tripRepository.save(newTrip);
 	}
+
+//params.get("s")
+	@GetMapping("/trips/search")
+	List<BusinessTrip> searchTrips(@RequestParam Map<String, String> params) {
+		List<BusinessTrip> AllTrips = tripRepository.findAll();
+		String cleanedQuery = params.get("query").trim()
+				.replaceAll("^\"|\"$", "")  // remove leading/trailing "
+				.replaceAll("^'|'$", "")    // remove leading/trailing '
+				.toLowerCase();
+		System.out.println("Search param: " + cleanedQuery);
+
+		List<BusinessTrip> filteredTrips = AllTrips.stream()
+				.filter(trip -> trip.getTitle() != null && trip.getTitle().toLowerCase().contains(cleanedQuery))
+				.collect(Collectors.toList());
+		return filteredTrips;
+	}
+
 
 	// single Item
 	@GetMapping("/trips/{id}")
