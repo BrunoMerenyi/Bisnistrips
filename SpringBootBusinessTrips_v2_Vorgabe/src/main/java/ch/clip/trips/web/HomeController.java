@@ -34,7 +34,6 @@ public class HomeController implements Serializable {
 		// return something to check if the server is running
 		log.info("im Home");
 		return "22";
-
 	}
 
 	@GetMapping("/")

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 // const trips = [
 //   {
@@ -101,18 +101,11 @@ export default function App() {
             <p className="text-sm text-gray-700">{t.description}</p>
             <div>
               <button
-                  type="button"
-                  disabled
-                  className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+                type="button"
+                disabled
+                className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
               >
                 Add to Triplist
-              </button>
-              <button
-                  type="button"
-                  disabled
-                  className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
-              >
-                Checkout
               </button>
             </div>
           </figcaption>
@@ -122,12 +115,12 @@ export default function App() {
   }
 
   return (
-      <>
-        <div>
-          <Header/>
-          <main className="w-full max-w-[1440px] p-5">
-            <section id="filters">
-              <label htmlFor="month">Filter by Month:</label>
+    <>
+      <div className="">
+        <Header />
+        <main className="w-full max-w-[1440px] p-5">
+          <section id="filters">
+            <label htmlFor="month">Filter by Month:</label>
             <select id="size">
               <option value="">All months</option>
               <option value="1">January</option>
@@ -135,7 +128,10 @@ export default function App() {
               <option value="3">March</option>
             </select>
           </section>
-          <section id="products" className="grid grid-cols-3 w-full gap-5">
+          <section
+            id="products"
+            className="grid lg:grid-cols-3 grid-cols-1 w-full gap-5"
+          >
             {trips.map(renderTrip)}
           </section>
         </main>
