@@ -101,11 +101,18 @@ export default function App() {
             <p className="text-sm text-gray-700">{t.description}</p>
             <div>
               <button
-                type="button"
-                disabled
-                className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+                  type="button"
+                  disabled
+                  className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
               >
                 Add to Triplist
+              </button>
+              <button
+                  type="button"
+                  disabled
+                  className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+              >
+                Checkout
               </button>
             </div>
           </figcaption>
@@ -115,12 +122,12 @@ export default function App() {
   }
 
   return (
-    <>
-      <div>
-        <Header />
-        <main className="w-full max-w-[1440px] p-5">
-          <section id="filters">
-            <label htmlFor="month">Filter by Month:</label>
+      <>
+        <div>
+          <Header/>
+          <main className="w-full max-w-[1440px] p-5">
+            <section id="filters">
+              <label htmlFor="month">Filter by Month:</label>
             <select id="size">
               <option value="">All months</option>
               <option value="1">January</option>
