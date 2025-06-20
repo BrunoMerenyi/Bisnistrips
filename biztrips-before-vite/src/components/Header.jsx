@@ -5,8 +5,8 @@ import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
 // Predefined navigation data
 const navBarItems = [
   {
-    title: "Products",
-    isDropDown: true,
+    title: "Trips",
+    isDropDown: false,
     dropDownItems: [
       {
         dropDownTitle: "Category 1",
@@ -20,23 +20,6 @@ const navBarItems = [
         items: [
           { title: "Item 3", link: "#", icon: "icon3" },
           { title: "Item 4", link: "#", icon: "icon4" },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Solutions",
-    isDropDown: false,
-  },
-  {
-    title: "Resources",
-    isDropDown: true,
-    dropDownItems: [
-      {
-        dropDownTitle: "Resources",
-        items: [
-          { title: "Documentation", link: "#", icon: "docs" },
-          { title: "Tutorials", link: "#", icon: "tutorials" },
         ],
       },
     ],
@@ -243,7 +226,7 @@ const Header = () => {
                   </>
                 ) : (
                   <motion.a
-                    href="#"
+                    href={`/${item.title}`}
                     className="text-black"
                     variants={linkHover}
                     initial="rest"
@@ -352,7 +335,7 @@ const Header = () => {
                       </>
                     ) : (
                       <a
-                        href="#"
+                        href={`/${item.title}`}
                         className="block py-3 text-black/70 hover:text-black"
                       >
                         {item.title}
