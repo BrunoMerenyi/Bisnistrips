@@ -28,7 +28,7 @@ export default function CheckoutPage() {
             {/* Cart Summary */}
             <div className="bg-white shadow-xl rounded-lg p-6 space-y-4">
                 <h2 className="text-xl font-semibold flex items-center gap-2">
-                    🛒 Ihre Reiseübersicht
+                    Ihre Reiseübersicht
                 </h2>
                 <ul className="divide-y divide-gray-200">
                     {cart.map((item) => (

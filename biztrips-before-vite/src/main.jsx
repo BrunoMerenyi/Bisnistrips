@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App.jsx";
 import Trips from "./components/Trips.jsx";
 import Trip from "./components/Trip.jsx";
-import Checkout from "./components/checkout.jsx";
+import Checkout from "./components/Checkout.jsx";
 
 
 ReactDOM.createRoot(root).render(
