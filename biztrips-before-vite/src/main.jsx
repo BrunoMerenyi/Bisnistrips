@@ -5,15 +5,16 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App.jsx";
 import Trips from "./components/Trips.jsx";
 import Trip from "./components/Trip.jsx";
+import Checkout from "./components/checkout.jsx";
 
 
-ReactDOM.createRoot('root').render(
+ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/trips" element={<Trips />} />
-      <Route path="/trips/:id" element={<Trip />} />
-
+        <Route path="/" element={<App />} />
+        <Route path="/trips" element={<Trips />} />
+        <Route path="/trips/:id" element={<Trip />} />
+        <Route path="/checkout" element={<Checkout />} />
     </Routes>
   </BrowserRouter>
 );

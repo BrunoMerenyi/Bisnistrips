@@ -60,7 +60,7 @@ function Trip() {
                   style={{ marginLeft: "50px" }}
               >
                 <a
-                    href={`/`}
+                    href={`/Checkout`}
                 >
                   Checkout
                 </a>

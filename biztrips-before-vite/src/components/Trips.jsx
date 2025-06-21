@@ -57,11 +57,23 @@ export default function Trips() {
             <p className="text-sm text-gray-700">{t.description}</p>
             <div>
               <button
-                type="button"
-                disabled
-                className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+                  type="button"
+                  disabled
+                  className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
               >
                 Add to Triplist
+              </button>
+              <button
+                  type="button"
+                  disabled
+                  className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+                  style={{marginLeft: "50px"}}
+              >
+                <a
+                    href={`/Checkout`}
+                >
+                  Checkout
+                </a>
               </button>
             </div>
           </figcaption>
@@ -71,14 +83,14 @@ export default function Trips() {
   }
 
   return (
-    <>
-      <div className="">
-        <Header />
-        <input
-          type="text"
-          placeholder="Search..."
-          className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500 transition-colors"
-          onChange={(e) => searchTrips(e.target.value)}
+      <>
+        <div className="">
+          <Header/>
+          <input
+              type="text"
+              placeholder="Search..."
+              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500 transition-colors"
+              onChange={(e) => searchTrips(e.target.value)}
         />
         <main className="w-full max-w-[1440px] p-5">
           <section id="filters">
