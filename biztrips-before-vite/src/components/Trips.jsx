@@ -3,11 +3,19 @@ import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 export default function Trips() {
+  const creds = btoa("demoUser:secret123");
+
   const [trips, setTrips] = useState([]);
 
   const searchTrips = async (query) => {
     const response = await fetch(
-      `http://localhost:8080/v1/trips/search?query=${query}`
+      `http://localhost:8080/v1/trips/search?query=${query}`,
+      {
+        headers: {
+          Authorization: `Basic ${creds}`,
+          "Content-Type": "application/json",
+        },
+      }
     );
     if (!response.ok) {
       console.error("Failed to fetch trips:", response.statusText);
@@ -18,11 +26,33 @@ export default function Trips() {
     setTrips(data);
   };
   const getTrips = async () => {
-    const response = await fetch("http://localhost:8080/v1/trips");
+    // 1) Base64-encode your username:password
+
+    // 2) Call the protected endpoint with the Authorization header
+    const response = await fetch(`http://localhost:8080/v1/trips`, {
+      headers: {
+        Authorization: `Basic ${creds}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    // 3) Handle errors (401, network, etc)
+    if (!response.ok) {
+      console.error(`Error fetching trips (${response.status})`);
+      // optionally show a user-friendly message or redirect to login
+      return;
+    }
+
+    // 4) Parse JSON and update state
     const data = await response.json();
-    console.log(data);
+    console.log("Trips:", data);
     setTrips(data);
   };
+
+  useEffect(() => {
+    console.log("useEffect");
+    getTrips();
+  }, []);
   useEffect(() => {
     getTrips();
   }, []);

@@ -9,9 +9,27 @@ function Trip() {
   const [trips, setTrips] = useState([]);
 
   const getTrips = async () => {
-    const response = await fetch(`http://localhost:8080/v1/trips/${id}`);
+    // 1) Base64-encode your username:password
+    const creds = btoa("demoUser:secret123");
+
+    // 2) Call the protected endpoint with the Authorization header
+    const response = await fetch(`http://localhost:8080/v1/trips/${id}`, {
+      headers: {
+        Authorization: `Basic ${creds}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    // 3) Handle errors (401, network, etc)
+    if (!response.ok) {
+      console.error(`Error fetching trips (${response.status})`);
+      // optionally show a user-friendly message or redirect to login
+      return;
+    }
+
+    // 4) Parse JSON and update state
     const data = await response.json();
-    console.log(data);
+    console.log("Trips:", data);
     setTrips(data);
   };
 

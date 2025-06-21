@@ -1,10 +1,11 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 
 import App from "./App.jsx";
 import Trips from "./components/Trips.jsx";
 import Trip from "./components/Trip.jsx";
+import Login from "./components/Login.jsx";
+import SignUp from "./components/SignUp.jsx";
 
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
@@ -12,6 +13,8 @@ ReactDOM.createRoot(root).render(
       <Route path="/" element={<App />} />
       <Route path="/trips" element={<Trips />} />
       <Route path="/trips/:id" element={<Trip />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
     </Routes>
   </BrowserRouter>
 );
