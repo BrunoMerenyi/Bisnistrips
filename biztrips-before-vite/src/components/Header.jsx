@@ -242,10 +242,16 @@ const Header = () => {
           {/* Auth Buttons and Mobile Menu Toggle */}
           <div className="flex items-center justify-end ml-auto">
             <div className="hidden lg:flex space-x-4">
-              <button className="bg-black text-white px-4 py-2 rounded-lg hover:bg-black/70">
-                Sign In
+              <button
+                className="bg-black text-white px-4 py-2 rounded-lg hover:bg-black/70"
+                onClick={() => (window.location.href = "/login")}
+              >
+                Log In
               </button>
-              <button className="bg-blue-500 hover:bg-blue-500/70 text-white px-4 py-2 rounded-lg">
+              <button
+                className="bg-blue-500 hover:bg-blue-500/70 text-white px-4 py-2 rounded-lg"
+                onClick={() => (window.location.href = "/signup")}
+              >
                 Sign Up
               </button>
             </div>

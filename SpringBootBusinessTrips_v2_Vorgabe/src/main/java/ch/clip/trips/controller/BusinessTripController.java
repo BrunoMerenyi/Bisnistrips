@@ -13,7 +13,7 @@ import ch.clip.trips.model.BusinessTrip;
 import ch.clip.trips.repo.BusinessTripRepository;
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/api")
 @CrossOrigin(origins = "*")
 
 public class BusinessTripController {
