@@ -67,22 +67,22 @@ function Trip() {
                   type="button"
                   disabled
                   className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
-                  style={{ marginRight: "50px" }}
+                  style={{marginRight: "50px"}}
               >
                 Add to Triplist
               </button>
-              <button
-                  type="button"
-                  disabled
-                  className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
-                  style={{ marginLeft: "50px" }}
-              >
-                <a
-                    href={`/Checkout`}
+                <button
+                    type="button"
+                    disabled
+                    className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+                    style={{marginLeft: "50px"}}
                 >
-                  Checkout
+                  <a
+                      href={`/Checkout`}
+                  >
+                    Checkout
                 </a>
-              </button>
+                </button>
             </div>
           </figcaption>
         </figure>
