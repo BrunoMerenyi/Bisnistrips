@@ -3,51 +3,58 @@ import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 export default function Trips() {
-  const creds = btoa("demoUser:secret123");
-
   const [trips, setTrips] = useState([]);
 
-  const searchTrips = async (query) => {
-    const response = await fetch(
-      `http://localhost:8080/v1/trips/search?query=${query}`,
+  async function searchTrips(query) {
+    const res = await fetch(
+      `http://localhost:8080/api/trips/search?query=${query}`,
       {
-        headers: {
-          Authorization: `Basic ${creds}`,
-          "Content-Type": "application/json",
-        },
+        // <-- via Vite proxy `/api` → Spring
+        method: "GET",
+        credentials: "include",
       }
     );
-    if (!response.ok) {
-      console.error("Failed to fetch trips:", response.statusText);
-      return;
-    }
-    const data = await response.json();
-    console.log(data);
-    setTrips(data);
-  };
-  const getTrips = async () => {
-    // 1) Base64-encode your username:password
 
-    // 2) Call the protected endpoint with the Authorization header
-    const response = await fetch(`http://localhost:8080/v1/trips`, {
-      headers: {
-        Authorization: `Basic ${creds}`,
-        "Content-Type": "application/json",
-      },
+    if (!res.ok) {
+      if (res.status === 401) {
+        throw new Error("Unauthorized – please log in first");
+      }
+      const errText = await res.text();
+      throw new Error(`Failed to fetch trips (${res.status}): ${errText}`);
+    }
+
+    const contentType = res.headers.get("content-type") || "";
+    if (contentType.includes("application/json")) {
+      setTrips(await res.json());
+    } else {
+      const text = await res.text();
+      throw new Error(`Expected JSON but got:\n${text}`);
+    }
+  }
+
+  async function getTrips(id) {
+    const res = await fetch(`/api/trips`, {
+      // <-- via Vite proxy `/api` → Spring
+      method: "GET",
+      credentials: "include",
     });
 
-    // 3) Handle errors (401, network, etc)
-    if (!response.ok) {
-      console.error(`Error fetching trips (${response.status})`);
-      // optionally show a user-friendly message or redirect to login
-      return;
+    if (!res.ok) {
+      if (res.status === 401) {
+        throw new Error("Unauthorized – please log in first");
+      }
+      const errText = await res.text();
+      throw new Error(`Failed to fetch trips (${res.status}): ${errText}`);
     }
 
-    // 4) Parse JSON and update state
-    const data = await response.json();
-    console.log("Trips:", data);
-    setTrips(data);
-  };
+    const contentType = res.headers.get("content-type") || "";
+    if (contentType.includes("application/json")) {
+      setTrips(await res.json());
+    } else {
+      const text = await res.text();
+      throw new Error(`Expected JSON but got:\n${text}`);
+    }
+  }
 
   useEffect(() => {
     console.log("useEffect");
