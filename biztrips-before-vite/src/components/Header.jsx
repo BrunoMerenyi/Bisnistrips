@@ -24,6 +24,26 @@ const navBarItems = [
       },
     ],
   },
+  {
+    title: "TripList",
+    isDropDown: false,
+    dropDownItems: [
+      {
+        dropDownTitle: "Category 1",
+        items: [
+          { title: "Item 1", link: "#", icon: "icon1" },
+          { title: "Item 2", link: "#", icon: "icon2" },
+        ],
+      },
+      {
+        dropDownTitle: "Category 2",
+        items: [
+          { title: "Item 3", link: "#", icon: "icon3" },
+          { title: "Item 4", link: "#", icon: "icon4" },
+        ],
+      },
+    ],
+  },
 ];
 
 // Click outside hook

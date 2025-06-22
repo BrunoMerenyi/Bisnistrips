@@ -98,7 +98,7 @@ export default function Trips() {
                   disabled
                   className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
               >
-                Add to Triplist
+                  Add to Triplist
               </button>
               <button
                   type="button"
