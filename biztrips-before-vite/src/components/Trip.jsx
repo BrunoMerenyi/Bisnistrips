@@ -30,6 +30,14 @@ function Trip() {
     setTrips(data);
   };
 
+  function addToTripList(trip) {
+    const current = JSON.parse(localStorage.getItem("tripList") || "[]");
+
+    if (current.some((t) => t.id === trip.id)) return;
+
+    localStorage.setItem("tripList", JSON.stringify([...current, trip]));
+  }
+
   useEffect(() => {
     console.log("useEffect");
     getTrips();
@@ -62,10 +70,10 @@ function Trip() {
               <div>
                 <button
                     type="button"
-                    disabled
-                    className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+                    onClick={() => addToTripList(t)}   // ⬅️  Trip ins localStorage legen
+                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
                 >
-                  Add to Triplist
+                  Add to TripList
                 </button>
                 <button
                     type="button"

@@ -55,15 +55,11 @@ export default function Trips() {
     }
   }
 
-  /* ganz oben – neue Hilfsfunktion */
   function addToTripList(trip) {
-    /* bisherige Liste holen (oder leeren Array-Fallback) */
     const current = JSON.parse(localStorage.getItem("tripList") || "[]");
 
-    /* schon vorhanden? → nichts tun */
     if (current.some((t) => t.id === trip.id)) return;
 
-    /* Trip anhängen & speichern */
     localStorage.setItem("tripList", JSON.stringify([...current, trip]));
   }
 
