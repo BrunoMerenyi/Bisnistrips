@@ -37,7 +37,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="flex justify-center">
       <div className="login-card">
         <h2 className="login-title">Welcome Back</h2>
         <form onSubmit={handleSubmit} className="login-form">

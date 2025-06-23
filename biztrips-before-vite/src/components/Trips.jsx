@@ -73,8 +73,8 @@ export default function Trips() {
   function renderTrip(t) {
     return (
       <div
-        className="flex flex-col justify-center items-center p-4 border rounded-lg shadow-md"
-        key={t.id}
+      className="flex flex-col justify-center items-center p-4 border rounded-lg shadow-md max-w-[1440px] w-full"
+      key={t.id}
       >
         <figure className="text-center w-full max-w-sm">
           <div className="mb-4">
@@ -127,25 +127,17 @@ export default function Trips() {
   }
 
   return (
-      <>
-        <div className="">
-          <Header/>
-          <input
+      <>          <Header/>
+
+        <div className="flex justify-center">
+        <main className="w-full max-w-[1440px] flex flex-col justify-center p-5">
+        <input
+          id="SearchBar"
               type="text"
               placeholder="Search..."
               className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500 transition-colors"
               onChange={(e) => searchTrips(e.target.value)}
         />
-        <main className="w-full max-w-[1440px] p-5">
-          <section id="filters">
-            <label htmlFor="month">Filter by Month:</label>
-            <select id="size">
-              <option value="">All months</option>
-              <option value="1">January</option>
-              <option value="2">February</option>
-              <option value="3">March</option>
-            </select>
-          </section>
           <section
             id="products"
             className="grid lg:grid-cols-3 grid-cols-1 w-full gap-5"

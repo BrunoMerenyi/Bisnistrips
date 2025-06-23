@@ -109,7 +109,7 @@ const Header = () => {
     <nav
       className={`${
         isDropdownOpenIndex === null ? `bg-white/60 shadow-sm` : `bg-white`
-      } sticky top-0 backdrop-blur-3xl z-50 transition-all ease-in-out duration-500`}
+      } sticky top-0 backdrop-blur-3xl flex justify-center z-50 transition-all ease-in-out duration-500`}
     >
       <div className="lg:w-full max-w-[1440px]  px-5 z-50">
         <div className="flex">

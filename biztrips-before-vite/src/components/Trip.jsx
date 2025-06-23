@@ -46,7 +46,7 @@ function Trip() {
   function renderTrip(t) {
     return (
         <div
-            className="flex flex-col justify-center items-center p-4 border rounded-lg shadow-md"
+            className="flex flex-col justify-center items-center p-4 border rounded-lg shadow-md max-w-[1440px] w-full"
             key={t.id}
         >
           <figure className="text-center w-full max-w-sm">
