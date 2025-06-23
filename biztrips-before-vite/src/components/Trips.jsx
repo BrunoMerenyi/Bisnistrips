@@ -55,6 +55,18 @@ export default function Trips() {
     }
   }
 
+  /* ganz oben – neue Hilfsfunktion */
+  function addToTripList(trip) {
+    /* bisherige Liste holen (oder leeren Array-Fallback) */
+    const current = JSON.parse(localStorage.getItem("tripList") || "[]");
+
+    /* schon vorhanden? → nichts tun */
+    if (current.some((t) => t.id === trip.id)) return;
+
+    /* Trip anhängen & speichern */
+    localStorage.setItem("tripList", JSON.stringify([...current, trip]));
+  }
+
   useEffect(() => {
     console.log("useEffect");
     getTrips();
@@ -94,10 +106,10 @@ export default function Trips() {
             <div>
               <button
                   type="button"
-                  disabled
-                  className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+                  onClick={() => addToTripList(t)}   // ⬅️  Trip ins localStorage legen
+                  className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
               >
-                  Add to Triplist
+                Add to TripList
               </button>
               <button
                   type="button"

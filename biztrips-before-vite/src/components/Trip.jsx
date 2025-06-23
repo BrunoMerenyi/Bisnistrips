@@ -10,14 +10,11 @@ function Trip() {
 
   const getTrips = async () => {
     // 1) Base64-encode your username:password
-    const creds = btoa("demoUser:secret123");
 
     // 2) Call the protected endpoint with the Authorization header
-    const response = await fetch(`http://localhost:8080/v1/trips/${id}`, {
-      headers: {
-        Authorization: `Basic ${creds}`,
-        "Content-Type": "application/json",
-      },
+    const response = await fetch(`http://localhost:8080/api/trips/${id}`, {
+      method: "GET",
+      credentials: "include",
     });
 
     // 3) Handle errors (401, network, etc)

@@ -1,26 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
 
 
 export default function TripList() {
-    const [tripList, setTripList] = useState([
-        {
-            id: 1,
-            name: "Business Trip BT01",
-            destination: "San Francisco",
-            date: "2025-07-01",
-            price: 1299,
-        },
-        {
-            id: 2,
-            name: "Business Trip BT02",
-            destination: "Santa Clara",
-            date: "2025-08-15",
-            price: 899,
-        },
-    ]);
+    const [tripList, setTripList] = useState(() => {
+        return JSON.parse(localStorage.getItem("tripList")) || [];
+    });
+    useEffect(() => {
+        localStorage.setItem("tripList", JSON.stringify(tripList));
+    }, [tripList]);
 
     const removeTrip = (id) => setTripList(tripList.filter((t) => t.id !== id));
 
@@ -52,7 +42,7 @@ export default function TripList() {
                                     </p>
                                 </div>
                                 <div className="text-right">
-                                    <p className="font-medium">CHF&nbsp;{trip.price.toFixed(2)}</p>
+                                    <p className="font-medium">CHF&nbsp;{(Number(trip.price) || 0).toFixed(2)}</p>
                                     <button
                                         onClick={() => removeTrip(trip.id)}
                                         className="mt-2 px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600"
