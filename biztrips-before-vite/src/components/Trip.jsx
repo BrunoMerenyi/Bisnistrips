@@ -71,7 +71,9 @@ function Trip() {
               </span>
               <p>{t.price} CHF</p>
             </div>
-            <p className="text-sm text-gray-700">{t.description}</p>
+             <p className="text-sm text-gray-700">
+               {t.longDescription || t.description}
+             </p>
             <div>
               <button
                 type="button"

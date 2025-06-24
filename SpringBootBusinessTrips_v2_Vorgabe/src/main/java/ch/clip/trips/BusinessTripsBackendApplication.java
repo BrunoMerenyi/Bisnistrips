@@ -43,7 +43,8 @@ public class BusinessTripsBackendApplication {
             Inklusive Besichtigung eines AWS-Rechenzentrums in Santa Clara.
             """,
 					LocalDateTime.of(2025, 2, 13, 9, 0),
-					LocalDateTime.of(2025, 2, 15, 17, 0)
+					LocalDateTime.of(2025, 2, 15, 17, 0),
+					101f
 			);
 
 			BusinessTrip bt02 = new BusinessTrip(
@@ -57,7 +58,8 @@ public class BusinessTripsBackendApplication {
             Optional: Tour durch das NYSE-Handelsparkett.
             """,
 					LocalDateTime.of(2025, 3, 10, 9, 0),
-					LocalDateTime.of(2025, 3, 12, 17, 0)
+					LocalDateTime.of(2025, 3, 12, 17, 0),
+					101f
 			);
 
 			BusinessTrip bt03 = new BusinessTrip(
@@ -71,7 +73,8 @@ public class BusinessTripsBackendApplication {
             Abschlussabend im Mori-Tower mit Blick über die Shibuya-Skyline.
             """,
 					LocalDateTime.of(2025, 4, 18, 9, 0),
-					LocalDateTime.of(2025, 4, 20, 16, 0)
+					LocalDateTime.of(2025, 4, 20, 16, 0),
+					101f
 			);
 
 			BusinessTrip bt04 = new BusinessTrip(
@@ -85,7 +88,8 @@ public class BusinessTripsBackendApplication {
             Historischer Stadtrundgang entlang der East-Side-Gallery.
             """,
 					LocalDateTime.of(2025, 5, 5, 9, 0),
-					LocalDateTime.of(2025, 5, 7, 17, 0)
+					LocalDateTime.of(2025, 5, 7, 17, 0),
+					101f
 			);
 
 			BusinessTrip bt05 = new BusinessTrip(
@@ -99,7 +103,8 @@ public class BusinessTripsBackendApplication {
             Dinner-Cruise auf der Themse mit Ausblick auf die Tower Bridge.
             """,
 					LocalDateTime.of(2025, 6, 12, 10, 0),
-					LocalDateTime.of(2025, 6, 14, 17, 0)
+					LocalDateTime.of(2025, 6, 14, 17, 0),
+					101f
 			);
 
 			BusinessTrip bt06 = new BusinessTrip(
@@ -113,7 +118,8 @@ public class BusinessTripsBackendApplication {
             Kulinarischer Abschluss in einem Bistro an der Seine.
             """,
 					LocalDateTime.of(2025, 7, 8, 9, 0),
-					LocalDateTime.of(2025, 7, 10, 17, 0)
+					LocalDateTime.of(2025, 7, 10, 17, 0),
+					101f
 			);
 
 			BusinessTrip bt07 = new BusinessTrip(
@@ -127,7 +133,8 @@ public class BusinessTripsBackendApplication {
             Networking auf einer Rooftop-Bar mit 360-Grad-Blick auf den Hafen.
             """,
 					LocalDateTime.of(2025, 8, 20, 9, 0),
-					LocalDateTime.of(2025, 8, 22, 17, 0)
+					LocalDateTime.of(2025, 8, 22, 17, 0),
+					101f
 			);
 
 			BusinessTrip bt08 = new BusinessTrip(
@@ -141,7 +148,8 @@ public class BusinessTripsBackendApplication {
             Führung durch das Blockchain-gestützte Zoll-Terminal von DP-World.
             """,
 					LocalDateTime.of(2025, 9, 15, 9, 0),
-					LocalDateTime.of(2025, 9, 17, 17, 0)
+					LocalDateTime.of(2025, 9, 17, 17, 0),
+					101f
 			);
 
 			BusinessTrip bt09 = new BusinessTrip(
@@ -155,7 +163,8 @@ public class BusinessTripsBackendApplication {
             Abschluss: Blue-Jays-Ballgame im Rogers Centre.
             """,
 					LocalDateTime.of(2025, 10, 6, 9, 0),
-					LocalDateTime.of(2025, 10, 8, 17, 0)
+					LocalDateTime.of(2025, 10, 8, 17, 0),
+					101f
 			);
 
 			BusinessTrip bt10 = new BusinessTrip(
@@ -169,7 +178,8 @@ public class BusinessTripsBackendApplication {
             Geführter Morning-Run im Royal Botanic Garden.
             """,
 					LocalDateTime.of(2025, 11, 3, 9, 0),
-					LocalDateTime.of(2025, 11, 5, 17, 0)
+					LocalDateTime.of(2025, 11, 5, 17, 0),
+					101f
 			);
 
 			BusinessTrip bt11 = new BusinessTrip(
@@ -183,7 +193,8 @@ public class BusinessTripsBackendApplication {
             Abendlicher Fondue-Plauschkurs in der Altstadt.
             """,
 					LocalDateTime.of(2025, 11, 24, 9, 0),
-					LocalDateTime.of(2025, 11, 26, 16, 0)
+					LocalDateTime.of(2025, 11, 26, 16, 0),
+					101f
 			);
 
 			BusinessTrip bt12 = new BusinessTrip(
@@ -197,7 +208,8 @@ public class BusinessTripsBackendApplication {
             Preisverleihung des Nordic Cleantech Open.
             """,
 					LocalDateTime.of(2025, 12, 10, 9, 0),
-					LocalDateTime.of(2025, 12, 12, 16, 0)
+					LocalDateTime.of(2025, 12, 12, 16, 0),
+					101f
 			);
 
 
