@@ -27,25 +27,26 @@ public class BusinessTrip implements Serializable {
 	private String longDescription;
 	private LocalDateTime startTrip;
 	private LocalDateTime endTrip;
+	private Float price;
 
 	@OneToMany(mappedBy = "businessTrip")
 	@JsonManagedReference
 	private List<Meeting> meetings;
 
 
-	public BusinessTrip() {
+	public BusinessTrip(long l, String sanFrancisco, String s, String string, LocalDateTime localDateTime, LocalDateTime dateTime) {
 		super();
 
 	}
 
-	public BusinessTrip(Long id, String title, String description, String longDescription, LocalDateTime startTrip, LocalDateTime endTrip) {
-		this();
+	public BusinessTrip(Long id, String title, String description, String longDescription, LocalDateTime startTrip, LocalDateTime endTrip, Float price) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
 		this.longDescription = longDescription;
 		this.startTrip = startTrip;
 		this.endTrip = endTrip;
+		this.price = price;
 	}
 
 
@@ -110,8 +111,8 @@ public class BusinessTrip implements Serializable {
 
 	@Override
 	public String toString() {
-		return "BusinessTrip [id=" + id + ", title=" + title + ", description=" + description + ", startTrip="
-				+ startTrip + ", endTrip=" + endTrip + ", meetings=" + meetings + "]";
+		return "BusinessTrip [id=" + id + ", title=" + title + ", description=" + description + ", longDescription=" + longDescription + ", startTrip="
+				+ startTrip + ", endTrip=" + endTrip + ", meetings=" + meetings + "]" + price + " CHF";
 	}
 
 

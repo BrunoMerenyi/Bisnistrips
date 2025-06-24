@@ -1,23 +1,34 @@
 package ch.clip.trips.model;
 
 import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "users")               // <-- this becomes your table name
+@Table(name="users")
 public class AppUser {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique=true, nullable=false)
     private String username;
 
-    @Column(nullable = false)
-    private String password;             // we’ll store the BCrypt-hash here
+    @Column(nullable=false)
+    private String password;
 
-    @Column(nullable = false)
-    private String roles;                // e.g. "ROLE_USER,ROLE_ADMIN"
+    @Column(nullable=false)
+    private String roles;
+
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_trips",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "trip_id")
+    )
+    private Set<BusinessTrip> trips = new HashSet<>();
+
 
     // standard getters & setters
     public Long getId() { return id; }
@@ -31,4 +42,8 @@ public class AppUser {
 
     public String getRoles() { return roles; }
     public void setRoles(String roles) { this.roles = roles; }
+
+    public Set<BusinessTrip> getTrips() {
+        return trips;
+    }
 }
