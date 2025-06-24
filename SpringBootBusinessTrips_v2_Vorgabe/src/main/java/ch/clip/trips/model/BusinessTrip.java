@@ -4,125 +4,119 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 
-import jakarta.persistence.Column;
-
 @Data
 @Entity
 public class BusinessTrip implements Serializable {
 
-//	private static final long serialVersionUID = 67027563808382509L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String title;
+    //	private static final long serialVersionUID = 67027563808382509L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String title;
 
-	@Column(length = 1000)
-	private String description;
+    @Column(columnDefinition = "TEXT")
+    private String description;
 
-	@Column(length = 1000)
-	private String longDescription;
-	private LocalDateTime startTrip;
-	private LocalDateTime endTrip;
-	private Float price;
-
-	@OneToMany(mappedBy = "businessTrip")
-	@JsonManagedReference
-	private List<Meeting> meetings;
+    @Column(columnDefinition = "TEXT")
+    private String longDescription;
 
 
-	public BusinessTrip(long l, String sanFrancisco, String s, String string, LocalDateTime localDateTime, LocalDateTime dateTime) {
-		super();
+    private LocalDateTime startTrip;
+    private LocalDateTime endTrip;
+    private Float price;
 
-	}
-
-	public BusinessTrip() { }
-
-	public BusinessTrip(Long id, String title, String description, String longDescription, LocalDateTime startTrip, LocalDateTime endTrip, Float price) {
-		this.id = id;
-		this.title = title;
-		this.description = description;
-		this.longDescription = longDescription;
-		this.startTrip = startTrip;
-		this.endTrip = endTrip;
-		this.price = price;
-	}
+    @OneToMany(mappedBy = "businessTrip")
+    @JsonManagedReference
+    private List<Meeting> meetings;
 
 
+    public BusinessTrip(long l, String sanFrancisco, String s, String string, LocalDateTime localDateTime, LocalDateTime dateTime) {
+        super();
 
-	public Long getId() {
-		return id;
-	}
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public BusinessTrip() {
+    }
 
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getLongDescription() {
-		return longDescription;
-	}
-
-	public void setLongDescription(String longDescription) {
-		this.longDescription = longDescription;
-	}
-
-	public List<Meeting> getMeetings() {
-		return meetings;
-	}
-
-	public void setMeetings(List<Meeting> meetings) {
-		this.meetings = meetings;
-	}
+    public BusinessTrip(Long id, String title, String description, String longDescription, LocalDateTime startTrip, LocalDateTime endTrip, Float price) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.longDescription = longDescription;
+        this.startTrip = startTrip;
+        this.endTrip = endTrip;
+        this.price = price;
+    }
 
 
+    public Long getId() {
+        return id;
+    }
 
-	public LocalDateTime getStartTrip() {
-		return startTrip;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setStartTrip(LocalDateTime startTrip) {
-		this.startTrip = startTrip;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public LocalDateTime getEndTrip() {
-		return endTrip;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setEndTrip(LocalDateTime endTrip) {
-		this.endTrip = endTrip;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	@Override
-	public String toString() {
-		return "BusinessTrip [id=" + id + ", title=" + title + ", description=" + description + ", longDescription=" + longDescription + ", startTrip="
-				+ startTrip + ", endTrip=" + endTrip + ", meetings=" + meetings + "]" + price + " CHF";
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
+    public String getLongDescription() {
+        return longDescription;
+    }
+
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
+    }
+
+    public List<Meeting> getMeetings() {
+        return meetings;
+    }
+
+    public void setMeetings(List<Meeting> meetings) {
+        this.meetings = meetings;
+    }
+
+
+    public LocalDateTime getStartTrip() {
+        return startTrip;
+    }
+
+    public void setStartTrip(LocalDateTime startTrip) {
+        this.startTrip = startTrip;
+    }
+
+    public LocalDateTime getEndTrip() {
+        return endTrip;
+    }
+
+    public void setEndTrip(LocalDateTime endTrip) {
+        this.endTrip = endTrip;
+    }
+
+    @Override
+    public String toString() {
+        return "BusinessTrip [id=" + id + ", title=" + title + ", description=" + description + ", longDescription=" + longDescription + ", startTrip="
+                + startTrip + ", endTrip=" + endTrip + ", meetings=" + meetings + "]" + price + " CHF";
+    }
 
 
 }
