@@ -1,3 +1,4 @@
+
 package ch.clip.trips.model;
 
 import java.io.Serializable;

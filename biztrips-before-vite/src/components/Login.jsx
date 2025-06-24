@@ -1,74 +1,74 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-
-  const login = async (username, password) => {
-    const res = await fetch("/api/login", {
-      method: "POST",
-      credentials: "include", // send cookies
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({ username, password }), // form data
-    });
-
-    if (!res.ok) throw new Error("Login failed");
-    return res;
-  };
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    setError(null);
     setLoading(true);
 
     try {
-      await login(username, password);
-      // Redirect or handle success
-      window.location.href = "/trips";
+      const res = await fetch("/api/login", {
+        method: "POST",
+        credentials: "include", // send cookies
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({ username, password }), // form data
+      });
+
+      if (res.ok) {
+        // On success, redirect to trips page
+        navigate("/trips");
+      } else {
+        setError("Invalid username or password");
+      }
     } catch (err) {
-      setError("Invalid username or password");
+      setError("Network error. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="login-card">
-        <h2 className="login-title">Welcome Back</h2>
-        <form onSubmit={handleSubmit} className="login-form">
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="form-input"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="form-input"
-              required
-            />
-          </div>
-          {error && <div className="error-message">{error}</div>}
-          <button type="submit" className="login-button" disabled={loading}>
-            {loading ? "Signing in..." : "Sign In"}
-          </button>
-        </form>
-      </div>
+    <div className="max-w-md mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Login</h1>
+      {error && <div className="text-red-500 mb-2">{error}</div>}
+      <form onSubmit={handleSubmit}>
+        <label className="block mb-2">
+          Username
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="w-full border rounded p-2"
+            required
+          />
+        </label>
+        <label className="block mb-4">
+          Password
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full border rounded p-2"
+            required
+          />
+        </label>
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          disabled={loading}
+        >
+          {loading ? "Signing in..." : "Login"}
+        </button>
+      </form>
     </div>
   );
-};
-
-export default Login;
+}
