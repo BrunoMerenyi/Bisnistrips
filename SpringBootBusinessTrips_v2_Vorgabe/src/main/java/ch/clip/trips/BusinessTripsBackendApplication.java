@@ -32,18 +32,174 @@ public class BusinessTripsBackendApplication {
 			
 			// save a couple of BusinessTrips
 			// BusinessTrip instances
-			BusinessTrip bt01 = new BusinessTrip(1L, "BT01", "San Francisco World Trade Center on new Server/IOT/Client", LocalDateTime.of(2021, 2, 13, 9, 0), LocalDateTime.of(2021, 2, 15, 16, 56));
-			BusinessTrip bt02 = new BusinessTrip(2L, "BT02", "Santa Clara Halley on new Server/IOT/Client", LocalDateTime.of(2021, 6, 23, 9, 0), LocalDateTime.of(2021, 6, 27, 16, 56));
-			BusinessTrip bt03 = new BusinessTrip(3L, "BT03", "San Jose City Halley on Docker/IOT/Client", LocalDateTime.of(2021, 12, 13, 9, 0), LocalDateTime.of(2021, 12, 15, 16, 56));
-			BusinessTrip bt04 = new BusinessTrip(4L, "BT04", "Winterthur City", LocalDateTime.of(2022, 1, 10, 8, 30), LocalDateTime.of(2022, 1, 12, 17, 0));
-			BusinessTrip bt05 = new BusinessTrip(5L, "BT05", "Zurich Tech Expo", LocalDateTime.of(2022, 2, 5, 10, 0), LocalDateTime.of(2022, 2, 7, 18, 0));
-			BusinessTrip bt06 = new BusinessTrip(6L, "BT06", "Geneva Business Summit", LocalDateTime.of(2022, 3, 15, 9, 0), LocalDateTime.of(2022, 3, 17, 16, 0));
-			BusinessTrip bt07 = new BusinessTrip(7L, "BT07", "Basel Innovation Days", LocalDateTime.of(2022, 4, 20, 8, 0), LocalDateTime.of(2022, 4, 22, 17, 0));
-			BusinessTrip bt08 = new BusinessTrip(8L, "BT08", "Bern Startup Meetup", LocalDateTime.of(2022, 5, 12, 9, 30), LocalDateTime.of(2022, 5, 14, 16, 30));
-			BusinessTrip bt09 = new BusinessTrip(9L, "BT09", "Lausanne AI Conference", LocalDateTime.of(2022, 6, 18, 10, 0), LocalDateTime.of(2022, 6, 20, 18, 0));
-			BusinessTrip bt10 = new BusinessTrip(10L, "BT10", "Lucerne Cloud Expo", LocalDateTime.of(2022, 7, 8, 9, 0), LocalDateTime.of(2022, 7, 10, 17, 0));
-			BusinessTrip bt11 = new BusinessTrip(11L, "BT11", "St. Gallen Fintech Forum", LocalDateTime.of(2022, 8, 22, 8, 30), LocalDateTime.of(2022, 8, 24, 16, 30));
-			BusinessTrip bt12 = new BusinessTrip(12L, "BT12", "Lugano Blockchain Summit", LocalDateTime.of(2022, 9, 14, 9, 0), LocalDateTime.of(2022, 9, 16, 17, 0));
+			BusinessTrip bt01 = new BusinessTrip(
+					1L,
+					"San Francisco",
+					"Cloud-Computing Conference",
+					"""
+            Drei Tage praxisnahe Vorträge zu Cloud-Native-Architekturen im Moscone Center.
+            Schwerpunkte: Kubernetes-Scaling, Observability und Multi-Cloud-Strategien.
+            Rahmenprogramm: Boot-Camp bei Google Cloud und Alcatraz-Networking-Dinner.
+            Inklusive Besichtigung eines AWS-Rechenzentrums in Santa Clara.
+            """,
+					LocalDateTime.of(2025, 2, 13, 9, 0),
+					LocalDateTime.of(2025, 2, 15, 17, 0)
+			);
+
+			BusinessTrip bt02 = new BusinessTrip(
+					2L,
+					"New York",
+					"International FinTech Summit",
+					"""
+            Führende Banken, Start-ups und Aufsichtsbehörden diskutieren Payment-Trends.
+            Panels zu Blockchain-Regulierung, PSD3 und KI-gestützter Risikoanalyse.
+            Abendempfang in der Federal Hall; Networking-Brunch im One Vanderbilt Summit.
+            Optional: Tour durch das NYSE-Handelsparkett.
+            """,
+					LocalDateTime.of(2025, 3, 10, 9, 0),
+					LocalDateTime.of(2025, 3, 12, 17, 0)
+			);
+
+			BusinessTrip bt03 = new BusinessTrip(
+					3L,
+					"Tokyo",
+					"AI & Robotics Expo",
+					"""
+            Japans größte Messe für humanoide Roboter und industrielle Automatisierung.
+            Live-Demos: autonome Lieferdrohnen, Pflege-Roboter und generative KI-Modelle.
+            Keynotes von SoftBank Robotics und Toyota Research Institute.
+            Abschlussabend im Mori-Tower mit Blick über die Shibuya-Skyline.
+            """,
+					LocalDateTime.of(2025, 4, 18, 9, 0),
+					LocalDateTime.of(2025, 4, 20, 16, 0)
+			);
+
+			BusinessTrip bt04 = new BusinessTrip(
+					4L,
+					"Berlin",
+					"IFA Consumer-Electronics Fair",
+					"""
+            Schwerpunkt: Smart-Home-Ökosysteme, 8K-Displays und Wearables.
+            Geführte Tour durch die Messehallen unter Leitung des Fraunhofer-HHI.
+            Politischer Abend im Bundeswirtschafts­ministerium zum Thema EU-Ökodesign.
+            Historischer Stadtrundgang entlang der East-Side-Gallery.
+            """,
+					LocalDateTime.of(2025, 5, 5, 9, 0),
+					LocalDateTime.of(2025, 5, 7, 17, 0)
+			);
+
+			BusinessTrip bt05 = new BusinessTrip(
+					5L,
+					"London",
+					"Cyber-Security Forum",
+					"""
+            Konferenz im Canary Wharf Conference Centre zu Zero-Trust-Architekturen.
+            Hands-on-Workshops: Incident-Response-Simulation und Cloud-Hardening.
+            Gastvortrag des National Cyber Security Centre (NCSC).
+            Dinner-Cruise auf der Themse mit Ausblick auf die Tower Bridge.
+            """,
+					LocalDateTime.of(2025, 6, 12, 10, 0),
+					LocalDateTime.of(2025, 6, 14, 17, 0)
+			);
+
+			BusinessTrip bt06 = new BusinessTrip(
+					6L,
+					"Paris",
+					"Smart-City Symposium",
+					"""
+            Treffen europäischer Städteplaner zu IoT-basierten Verkehrs­konzepten.
+            Use-Cases: 5G-Ampelsteuerung, Energie-Sharing und AR-Touristenführung.
+            Exkursion ins Quartier „La Défense“ – Pilotgebiet für 100 % erneuerbare Wärme.
+            Kulinarischer Abschluss in einem Bistro an der Seine.
+            """,
+					LocalDateTime.of(2025, 7, 8, 9, 0),
+					LocalDateTime.of(2025, 7, 10, 17, 0)
+			);
+
+			BusinessTrip bt07 = new BusinessTrip(
+					7L,
+					"Singapore",
+					"Global IoT Week",
+					"""
+            Messe im Marina Bay Sands Expo Center mit über 800 Ausstellern.
+            Schwerpunkte: Industrie-4.0-Sensorik, NB-IoT-Netzwerke und Edge-AI.
+            Abend-Light-Show „Spectra“ exklusiv für Konferenz­teilnehmer.
+            Networking auf einer Rooftop-Bar mit 360-Grad-Blick auf den Hafen.
+            """,
+					LocalDateTime.of(2025, 8, 20, 9, 0),
+					LocalDateTime.of(2025, 8, 22, 17, 0)
+			);
+
+			BusinessTrip bt08 = new BusinessTrip(
+					8L,
+					"Dubai",
+					"Blockchain Expo",
+					"""
+            Größte MENA-Region-Veranstaltung zu DeFi, NFTs und CBDC-Projekten.
+            RegTech-Panel mit Vertretern der Dubai Financial Services Authority.
+            Desert-Experience-Side-Event: 4×4-Tour & Arabian-Nights-Gala-Dinner.
+            Führung durch das Blockchain-gestützte Zoll-Terminal von DP-World.
+            """,
+					LocalDateTime.of(2025, 9, 15, 9, 0),
+					LocalDateTime.of(2025, 9, 17, 17, 0)
+			);
+
+			BusinessTrip bt09 = new BusinessTrip(
+					9L,
+					"Toronto",
+					"Startup Showcase",
+					"""
+            Pitch-Sessions im MaRS Discovery District für Seed- bis Series-B-Start-ups.
+            One-on-One-Mentoring mit VCs aus dem Silicon Valley & Kanada.
+            Stadtführung durch das historische Distillery District.
+            Abschluss: Blue-Jays-Ballgame im Rogers Centre.
+            """,
+					LocalDateTime.of(2025, 10, 6, 9, 0),
+					LocalDateTime.of(2025, 10, 8, 17, 0)
+			);
+
+			BusinessTrip bt10 = new BusinessTrip(
+					10L,
+					"Sydney",
+					"Data-Science Congress",
+					"""
+            Keynotes von Atlassian, CSIRO und Microsoft Research.
+            Workshops: Responsible-AI-Frameworks & ML-Ops auf Kubernetes.
+            Sydney-Harbour-Dinner-Cruise vorbei am Opernhaus und der Harbour-Bridge.
+            Geführter Morning-Run im Royal Botanic Garden.
+            """,
+					LocalDateTime.of(2025, 11, 3, 9, 0),
+					LocalDateTime.of(2025, 11, 5, 17, 0)
+			);
+
+			BusinessTrip bt11 = new BusinessTrip(
+					11L,
+					"Zurich",
+					"Quantum-Computing Roundtable",
+					"""
+            geschlossenes Expertentreffen an der ETH Zürich.
+            Agenda: Fehler­korrektur, Quanten­suprematie und Post-Quantum-Crypto.
+            Laborbesichtigung im IBM Research Zürich in Rüschlikon.
+            Abendlicher Fondue-Plauschkurs in der Altstadt.
+            """,
+					LocalDateTime.of(2025, 11, 24, 9, 0),
+					LocalDateTime.of(2025, 11, 26, 16, 0)
+			);
+
+			BusinessTrip bt12 = new BusinessTrip(
+					12L,
+					"Copenhagen",
+					"Sustainable-Tech Conference",
+					"""
+            Plenar­vorträge zu Kreislauf­wirtschaft, Wind-Energy-Innovation und Green-AI.
+            Besuch der Wind-Turbinen-Testanlage Lindø Offshore Renewables Center.
+            Fahrrad-City-Tour entlang der Hafenpromenade & Dinner in der Street-Food-Halle.
+            Preisverleihung des Nordic Cleantech Open.
+            """,
+					LocalDateTime.of(2025, 12, 10, 9, 0),
+					LocalDateTime.of(2025, 12, 12, 16, 0)
+			);
+
 
 // Save them
 			businessTripRepository.save(bt01);

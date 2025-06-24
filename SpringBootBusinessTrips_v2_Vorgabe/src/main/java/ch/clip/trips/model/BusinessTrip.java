@@ -24,6 +24,7 @@ public class BusinessTrip implements Serializable {
 	private Long id;
 	private String title;
 	private String description;
+	private String longDescription;
 	private LocalDateTime startTrip;
 	private LocalDateTime endTrip;
 
@@ -37,11 +38,12 @@ public class BusinessTrip implements Serializable {
 
 	}
 
-	public BusinessTrip(Long id, String title, String description, LocalDateTime startTrip, LocalDateTime endTrip) {
+	public BusinessTrip(Long id, String title, String description, String longDescription, LocalDateTime startTrip, LocalDateTime endTrip) {
 		this();
 		this.id = id;
 		this.title = title;
 		this.description = description;
+		this.longDescription = longDescription;
 		this.startTrip = startTrip;
 		this.endTrip = endTrip;
 	}
@@ -70,6 +72,14 @@ public class BusinessTrip implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getLongDescription() {
+		return longDescription;
+	}
+
+	public void setLongDescription(String longDescription) {
+		this.longDescription = longDescription;
 	}
 
 	public List<Meeting> getMeetings() {
