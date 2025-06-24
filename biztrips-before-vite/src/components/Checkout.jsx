@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export default function CheckoutPage() {
-    const [cart] = useState([
-        { id: 1, name: "Business Trip BT01", qty: 1, price: 1299 },
-        { id: 2, name: "Business Trip BT02", qty: 2, price: 899 }
-    ]);
+    const { state } = useLocation();
+    const navigate = useNavigate();
+
     const [form, setForm] = useState({
         fullName: "",
         email: "",
@@ -14,7 +14,15 @@ export default function CheckoutPage() {
         cvc: ""
     });
 
-    const subtotal = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+    const cart = state?.cart ?? [];
+    useEffect(() => {
+        if (cart.length === 0) navigate("/triplist");
+    }, [cart, navigate]);
+
+    const subtotal = cart.reduce(
+        (sum, item) => sum + (Number(item.price) || 0),
+        0
+    );
 
     const handleChange = (e) =>
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -33,10 +41,12 @@ export default function CheckoutPage() {
                 <ul className="divide-y divide-gray-200">
                     {cart.map((item) => (
                         <li key={item.id} className="py-2 flex justify-between text-sm">
-              <span>
-                {item.qty}× {item.name}
-              </span>
-                            <span>{(item.price * item.qty).toFixed(2)} CHF</span>
+                            <span>
+                                {item.title}
+                            </span>
+                            <span>
+                                {Number(item.price).toFixed(2)} CHF
+                            </span>
                         </li>
                     ))}
                 </ul>

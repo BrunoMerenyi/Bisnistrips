@@ -44,7 +44,7 @@ public class BusinessTripsBackendApplication {
             """,
 					LocalDateTime.of(2025, 2, 13, 9, 0),
 					LocalDateTime.of(2025, 2, 15, 17, 0),
-					101f
+					299f
 			);
 
 			BusinessTrip bt02 = new BusinessTrip(
@@ -59,7 +59,7 @@ public class BusinessTripsBackendApplication {
             """,
 					LocalDateTime.of(2025, 3, 10, 9, 0),
 					LocalDateTime.of(2025, 3, 12, 17, 0),
-					101f
+					449f
 			);
 
 			BusinessTrip bt03 = new BusinessTrip(
@@ -74,7 +74,7 @@ public class BusinessTripsBackendApplication {
             """,
 					LocalDateTime.of(2025, 4, 18, 9, 0),
 					LocalDateTime.of(2025, 4, 20, 16, 0),
-					101f
+					699f
 			);
 
 			BusinessTrip bt04 = new BusinessTrip(
@@ -89,7 +89,7 @@ public class BusinessTripsBackendApplication {
             """,
 					LocalDateTime.of(2025, 5, 5, 9, 0),
 					LocalDateTime.of(2025, 5, 7, 17, 0),
-					101f
+					839f
 			);
 
 			BusinessTrip bt05 = new BusinessTrip(
@@ -104,7 +104,7 @@ public class BusinessTripsBackendApplication {
             """,
 					LocalDateTime.of(2025, 6, 12, 10, 0),
 					LocalDateTime.of(2025, 6, 14, 17, 0),
-					101f
+					149f
 			);
 
 			BusinessTrip bt06 = new BusinessTrip(
@@ -119,7 +119,7 @@ public class BusinessTripsBackendApplication {
             """,
 					LocalDateTime.of(2025, 7, 8, 9, 0),
 					LocalDateTime.of(2025, 7, 10, 17, 0),
-					101f
+					979f
 			);
 
 			BusinessTrip bt07 = new BusinessTrip(
@@ -134,7 +134,7 @@ public class BusinessTripsBackendApplication {
             """,
 					LocalDateTime.of(2025, 8, 20, 9, 0),
 					LocalDateTime.of(2025, 8, 22, 17, 0),
-					101f
+					589f
 			);
 
 			BusinessTrip bt08 = new BusinessTrip(
@@ -149,7 +149,7 @@ public class BusinessTripsBackendApplication {
             """,
 					LocalDateTime.of(2025, 9, 15, 9, 0),
 					LocalDateTime.of(2025, 9, 17, 17, 0),
-					101f
+					379f
 			);
 
 			BusinessTrip bt09 = new BusinessTrip(
@@ -164,7 +164,7 @@ public class BusinessTripsBackendApplication {
             """,
 					LocalDateTime.of(2025, 10, 6, 9, 0),
 					LocalDateTime.of(2025, 10, 8, 17, 0),
-					101f
+					159f
 			);
 
 			BusinessTrip bt10 = new BusinessTrip(
@@ -179,7 +179,7 @@ public class BusinessTripsBackendApplication {
             """,
 					LocalDateTime.of(2025, 11, 3, 9, 0),
 					LocalDateTime.of(2025, 11, 5, 17, 0),
-					101f
+					799f
 			);
 
 			BusinessTrip bt11 = new BusinessTrip(
@@ -194,7 +194,7 @@ public class BusinessTripsBackendApplication {
             """,
 					LocalDateTime.of(2025, 11, 24, 9, 0),
 					LocalDateTime.of(2025, 11, 26, 16, 0),
-					101f
+					659f
 			);
 
 			BusinessTrip bt12 = new BusinessTrip(
@@ -209,7 +209,7 @@ public class BusinessTripsBackendApplication {
             """,
 					LocalDateTime.of(2025, 12, 10, 9, 0),
 					LocalDateTime.of(2025, 12, 12, 16, 0),
-					101f
+					749f
 			);
 
 
