@@ -4,9 +4,12 @@ import Header from "./Header";
 import { motion, AnimatePresence } from "framer-motion";
 import { addMyTrip } from "../api";
 import { AuthContext } from "../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Trips() {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const [trips, setTrips] = useState([]);
   const [showNotification, setShowNotification] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -67,6 +70,19 @@ export default function Trips() {
       .then(() => {
         setShowNotification(true);
         setTimeout(() => setShowNotification(false), 3000);
+      })
+      .catch((err) => {
+        console.error("Failed to add trip to list:", err);
+        alert("Failed to add trip to list. Please try again.");
+      });
+  }
+
+  function addTripAndCheckout(trip) {
+    setShowNotification(true);
+    setTimeout(() => setShowNotification(false), 3000);
+    addMyTrip(trip.id)
+      .then(() => {
+        navigate("/checkout");
       })
       .catch((err) => {
         console.error("Failed to add trip to list:", err);
@@ -155,10 +171,9 @@ export default function Trips() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2.5 px-4 rounded-lg font-medium transition-colors duration-200"
+              onClick={() => addTripAndCheckout(t)}
             >
-              <a href={`/Checkout`} className="flex items-center gap-1">
-                🛒 Checkout
-              </a>
+              🛒 Checkout
             </motion.button>
           </div>
         </div>
