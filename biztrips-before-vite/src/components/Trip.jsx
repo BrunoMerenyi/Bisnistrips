@@ -82,14 +82,6 @@ function Trip() {
               >
                 Add to TripList
               </button>
-              <button
-                type="button"
-                disabled
-                className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
-                style={{ marginLeft: "50px" }}
-              >
-                <a href={`/Checkout`}>Checkout</a>
-              </button>
             </div>
           </figcaption>
         </figure>

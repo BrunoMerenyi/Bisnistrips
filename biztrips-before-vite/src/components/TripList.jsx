@@ -74,9 +74,6 @@ export default function TripList() {
                                                 {start} – {end}
                                             </p>
                                         </div>
-                                        <span className="px-2 py-0.5 text-xs rounded bg-yellow-100 text-yellow-800">
-                                            geplant
-                                        </span>
                                     </div>
                                     <div className="flex justify-end items-center gap-4">
                                         <p className="font-medium">
