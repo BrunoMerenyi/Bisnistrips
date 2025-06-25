@@ -94,7 +94,6 @@ function Trip() {
             transition={{ delay: 0.7, type: "spring", stiffness: 300 }}
             className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-full p-3 shadow-lg"
           >
-            <span className="text-2xl">📍</span>
           </motion.div>
         </div>
 
@@ -117,7 +116,6 @@ function Trip() {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-indigo-100 px-4 py-2 rounded-full mb-6"
           >
-            <span className="text-lg">📅</span>
             <span className="font-medium text-gray-700">
               {t.startTrip && t.startTrip.length >= 3
                 ? `${t.startTrip[2]}-${t.startTrip[1]}-${t.startTrip[0]}`
@@ -153,7 +151,6 @@ function Trip() {
               onClick={() => addToTripList(t)}
               className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 px-8 rounded-2xl font-semibold text-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
             >
-              <span className="text-xl">➕</span>
               Add to My Trip List
             </motion.button>
 
@@ -166,7 +163,6 @@ function Trip() {
                 href={`/Checkout`}
                 className="flex items-center justify-center gap-3"
               >
-                <span className="text-xl">🛒</span>
                 Book Now
               </a>
             </motion.button>
@@ -180,7 +176,6 @@ function Trip() {
             className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8"
           >
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-4 rounded-xl">
-              <div className="text-2xl mb-2">⭐</div>
               <h4 className="font-semibold text-gray-800">
                 Premium Experience
               </h4>
@@ -190,7 +185,6 @@ function Trip() {
             </div>
 
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-xl">
-              <div className="text-2xl mb-2">🛡️</div>
               <h4 className="font-semibold text-gray-800">Fully Insured</h4>
               <p className="text-sm text-gray-600">
                 Complete travel protection included
@@ -198,7 +192,6 @@ function Trip() {
             </div>
 
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-4 rounded-xl">
-              <div className="text-2xl mb-2">📞</div>
               <h4 className="font-semibold text-gray-800">24/7 Support</h4>
               <p className="text-sm text-gray-600">
                 Round-the-clock assistance available
@@ -226,7 +219,6 @@ function Trip() {
             }}
             className="text-6xl"
           >
-            ✈️
           </motion.div>
         </div>
       </>
@@ -260,7 +252,6 @@ function Trip() {
                   animate={{ opacity: 1, y: 0 }}
                   className="text-center py-12"
                 >
-                  <div className="text-6xl mb-4">🚫</div>
                   <h3 className="text-xl font-semibold text-gray-600 mb-2">
                     Trip not found
                   </h3>

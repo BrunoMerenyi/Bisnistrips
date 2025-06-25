@@ -165,7 +165,7 @@ export default function Trips() {
               onClick={() => addToTripList(t)}
               className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2.5 px-4 rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-md hover:shadow-lg"
             >
-              ➕ Add to List
+              Add to List
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -173,7 +173,7 @@ export default function Trips() {
               className="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2.5 px-4 rounded-lg font-medium transition-colors duration-200"
               onClick={() => addTripAndCheckout(t)}
             >
-              🛒 Checkout
+              Checkout
             </motion.button>
           </div>
         </div>
@@ -203,7 +203,6 @@ export default function Trips() {
           }}
           className="text-8xl mb-4"
         >
-          ✈️
         </motion.div>
 
         {/* Floating elements around the plane */}
@@ -236,7 +235,6 @@ export default function Trips() {
           }}
           className="absolute -bottom-2 -left-8 text-2xl"
         >
-          🌍
         </motion.div>
 
         <motion.div
@@ -251,7 +249,6 @@ export default function Trips() {
           }}
           className="absolute top-2 left-12 text-xl"
         >
-          ⭐
         </motion.div>
       </div>
 
@@ -263,7 +260,7 @@ export default function Trips() {
         className="text-center max-w-md"
       >
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Welcome to BizTrips! 🎯
+          Welcome to BizTrips!
         </h1>
         <p className="text-lg text-gray-600 mb-8">
           Discover amazing business trips and adventures around the world. Sign
@@ -355,7 +352,7 @@ export default function Trips() {
                 className="text-center mb-8"
               >
                 <h1 className="text-4xl font-bold text-gray-800 mb-4">
-                  Discover Your Next Adventure ✈️
+                  Discover Your Next Adventure!
                 </h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   Explore our curated collection of business trips and unique

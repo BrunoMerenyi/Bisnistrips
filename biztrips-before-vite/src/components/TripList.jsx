@@ -114,7 +114,7 @@ export default function TripList() {
         className="text-center max-w-md"
       >
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Your Trip List 📝
+          Your Trip List
         </h1>
         <p className="text-lg text-gray-600 mb-8">
           Sign in to view and manage your saved business trips and adventures!
@@ -194,7 +194,7 @@ export default function TripList() {
                 className="text-center mb-8"
               >
                 <h1 className="text-4xl font-bold text-gray-800 mb-4">
-                  Your Trip Selection 📋
+                  Your Trip Selection
                 </h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   Manage your saved business trips and plan your adventures
@@ -208,7 +208,6 @@ export default function TripList() {
                   transition={{ duration: 0.5 }}
                   className="text-center py-12"
                 >
-                  <div className="text-6xl mb-4">📝</div>
                   <h3 className="text-xl font-semibold text-gray-600 mb-2">
                     No trips in your list yet
                   </h3>
@@ -286,12 +285,12 @@ export default function TripList() {
                               <div className="flex flex-wrap gap-2 mb-4">
                                 {trip.destination && (
                                   <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
-                                    📍 {trip.destination}
+                                    {trip.destination}
                                   </span>
                                 )}
                                 {trip.date && (
                                   <span className="inline-flex items-center gap-1 bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">
-                                    📅 {trip.date}
+                                    {trip.date}
                                   </span>
                                 )}
                               </div>
@@ -313,7 +312,7 @@ export default function TripList() {
                                 }
                                 className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2.5 px-4 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2"
                               >
-                                👁️ View Details
+                                View Details
                               </motion.button>
                               <motion.button
                                 whileHover={{ scale: 1.05 }}
@@ -321,7 +320,7 @@ export default function TripList() {
                                 onClick={() => removeTrip(trip.id)}
                                 className="bg-red-500 hover:bg-red-600 text-white py-2.5 px-4 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2"
                               >
-                                🗑️ Remove
+                                Remove
                               </motion.button>
                             </div>
                           </div>
@@ -363,7 +362,7 @@ export default function TripList() {
                       onClick={() => (window.location.href = "/checkout")}
                       className="w-full mt-4 bg-white text-blue-600 py-3 px-6 rounded-xl font-semibold hover:bg-blue-50 transition-colors duration-200 flex items-center justify-center gap-2"
                     >
-                      🛒 Proceed to Checkout
+                      Proceed to Checkout
                     </motion.button>
                   </motion.div>
                 </div>
@@ -386,13 +385,6 @@ export default function TripList() {
               }}
               className="fixed bottom-8 right-8 bg-gradient-to-r from-red-500 to-pink-500 text-white px-6 py-4 rounded-2xl shadow-2xl z-50 flex items-center gap-3"
             >
-              <motion.span
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 0.5 }}
-                className="text-xl"
-              >
-                🗑️
-              </motion.span>
               <span className="font-medium">Trip removed from your list!</span>
             </motion.div>
           )}

@@ -94,20 +94,6 @@ export default function Login() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-center mb-8"
           >
-            <motion.div
-              animate={{
-                scale: [1, 1.1, 1],
-                rotate: [0, 5, -5, 0],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="text-6xl mb-4"
-            >
-              🔐
-            </motion.div>
             <h1 className="text-3xl font-bold text-gray-800 mb-2">
               Welcome Back!
             </h1>
@@ -126,7 +112,6 @@ export default function Login() {
                 transition={{ duration: 0.3 }}
                 className="bg-red-100 border border-red-300 text-red-700 px-4 py-3 rounded-xl mb-6 flex items-center gap-2"
               >
-                <span className="text-lg">⚠️</span>
                 <span className="font-medium">{error}</span>
               </motion.div>
             )}
@@ -147,7 +132,7 @@ export default function Login() {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                👤 Username
+                Username
               </label>
               <motion.input
                 whileFocus={{ scale: 1.02 }}
@@ -167,7 +152,7 @@ export default function Login() {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                🔑 Password
+                Password
               </label>
               <motion.input
                 whileFocus={{ scale: 1.02 }}
@@ -206,7 +191,6 @@ export default function Login() {
                 </>
               ) : (
                 <>
-                  <span className="text-xl">🚀</span>
                   Log In
                 </>
               )}
@@ -227,7 +211,6 @@ export default function Login() {
               onClick={() => navigate("/signup")}
               className="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded-xl transition-colors duration-200 flex items-center justify-center gap-2"
             >
-              <span className="text-lg">✨</span>
               Create New Account
             </motion.button>
           </motion.div>

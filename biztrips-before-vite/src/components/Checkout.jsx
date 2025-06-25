@@ -168,7 +168,7 @@ export default function CheckoutPage() {
                 className="text-center mb-8"
               >
                 <h1 className="text-4xl font-bold text-gray-800 mb-4">
-                  Secure Checkout 🛒
+                  Secure Checkout
                 </h1>
                 <p className="text-lg text-gray-600">
                   Complete your booking and start your adventure
@@ -184,7 +184,6 @@ export default function CheckoutPage() {
                   className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8"
                 >
                   <div className="flex items-center gap-3 mb-6">
-                    <span className="text-2xl">📋</span>
                     <h2 className="text-2xl font-bold text-gray-800">
                       Trip Summary
                     </h2>
@@ -252,7 +251,6 @@ export default function CheckoutPage() {
                   className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8"
                 >
                   <div className="flex items-center gap-3 mb-6">
-                    <span className="text-2xl">💳</span>
                     <h2 className="text-2xl font-bold text-gray-800">
                       Payment Details
                     </h2>
@@ -267,7 +265,7 @@ export default function CheckoutPage() {
                         transition={{ duration: 0.5, delay: 0.5 }}
                       >
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          👤 Full Name
+                          Full Name
                         </label>
                         <motion.input
                           whileFocus={{ scale: 1.02 }}
@@ -286,7 +284,7 @@ export default function CheckoutPage() {
                         transition={{ duration: 0.5, delay: 0.6 }}
                       >
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          📧 Email
+                          Email
                         </label>
                         <motion.input
                           whileFocus={{ scale: 1.02 }}
@@ -309,7 +307,7 @@ export default function CheckoutPage() {
                         transition={{ duration: 0.5, delay: 0.7 }}
                       >
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          💳 Card Number
+                          Card Number
                         </label>
                         <motion.input
                           whileFocus={{ scale: 1.02 }}
@@ -329,7 +327,7 @@ export default function CheckoutPage() {
                           transition={{ duration: 0.5, delay: 0.8 }}
                         >
                           <label className="block text-sm font-semibold text-gray-700 mb-2">
-                            📅 Expiry
+                            Expiry
                           </label>
                           <motion.input
                             whileFocus={{ scale: 1.02 }}
@@ -348,7 +346,7 @@ export default function CheckoutPage() {
                           transition={{ duration: 0.5, delay: 0.9 }}
                         >
                           <label className="block text-sm font-semibold text-gray-700 mb-2">
-                            🔒 CVC
+                            CVC
                           </label>
                           <motion.input
                             whileFocus={{ scale: 1.02 }}
@@ -389,7 +387,6 @@ export default function CheckoutPage() {
                         </>
                       ) : (
                         <>
-                          <span className="text-xl">💳</span>
                           Complete Payment ({total.toFixed(2)} CHF)
                         </>
                       )}
@@ -403,7 +400,6 @@ export default function CheckoutPage() {
                     transition={{ duration: 0.5, delay: 1.1 }}
                     className="mt-6 p-4 bg-green-50 rounded-xl flex items-center gap-3"
                   >
-                    <span className="text-2xl">🔒</span>
                     <div>
                       <p className="font-semibold text-green-800">
                         Secure Payment
