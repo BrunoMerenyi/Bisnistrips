@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
-
+import { AuthContext } from "./../contexts/AuthContext";
+import { useContext } from "react";
 // Predefined navigation data
 const navBarItems = [
   {
@@ -65,6 +66,7 @@ const useClickOutside = (ref, handler) => {
 };
 
 const Header = () => {
+  const { user, loading, logout } = useContext(AuthContext);
   const [isDropdownOpenIndex, setIsDropdownOpenIndex] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -103,6 +105,17 @@ const Header = () => {
     hover: { opacity: 1 },
   };
 
+  async function logOut() {
+    const res = await fetch("/api/logout", {
+      method: "POST",
+      credentials: "include",
+    });
+
+    if (res.ok) {
+      window.location.href = "/trips";
+    }
+    return res;
+  }
   useClickOutside(dropdownRef, handleClickOutside);
 
   return (
@@ -116,7 +129,7 @@ const Header = () => {
           {/* Logo */}
           <a
             className="flex-shrink-0 flex items-center hover:cursor-pointer"
-            href="/"
+            href="/trips"
           >
             <img className="h-16 w-auto" src="/images/logo.png" alt="Logo" />
           </a>
@@ -262,18 +275,33 @@ const Header = () => {
           {/* Auth Buttons and Mobile Menu Toggle */}
           <div className="flex items-center justify-end ml-auto">
             <div className="hidden lg:flex space-x-4">
-              <button
-                className="bg-black text-white px-4 py-2 rounded-lg hover:bg-black/70"
-                onClick={() => (window.location.href = "/login")}
-              >
-                Log In
-              </button>
-              <button
-                className="bg-blue-500 hover:bg-blue-500/70 text-white px-4 py-2 rounded-lg"
-                onClick={() => (window.location.href = "/signup")}
-              >
-                Sign Up
-              </button>
+              {!user ? (
+                <>
+                  {" "}
+                  <button
+                    className="bg-black text-white px-4 py-2 rounded-lg hover:bg-black/70"
+                    onClick={() => (window.location.href = "/login")}
+                  >
+                    Log In
+                  </button>
+                  <button
+                    className="bg-blue-500 hover:bg-blue-500/70 text-white px-4 py-2 rounded-lg"
+                    onClick={() => (window.location.href = "/signup")}
+                  >
+                    Sign Up
+                  </button>
+                </>
+              ) : (
+                <>
+                  {" "}
+                  <button
+                    onClick={logOut}
+                    className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-500/70 "
+                  >
+                    Log Out
+                  </button>
+                </>
+              )}
             </div>
             <button
               className="lg:hidden p-2 z-50"
@@ -370,12 +398,29 @@ const Header = () => {
                   </div>
                 ))}
                 <div className="mt-4 space-y-2 pb-4">
-                  <button className="w-full bg-black text-white px-4 py-2 z-50 rounded-lg hover:bg-black/70">
-                    Sign In
-                  </button>
-                  <button className="w-full bg-primary hover:bg-primary/70 z-50 text-white px-4 py-2 rounded-lg">
-                    Sign Up
-                  </button>
+                  {!user ? (
+                    <>
+                      <button
+                        className="w-full bg-black text-white px-4 py-2 z-50 rounded-lg hover:bg-black/70"
+                        onClick={() => (window.location.href = "/login")}
+                      >
+                        Log In
+                      </button>
+                      <button
+                        className="w-full bg-blue-500 hover:bg-blue-500/70 z-50 text-white px-4 py-2 rounded-lg"
+                        onClick={() => (window.location.href = "/signup")}
+                      >
+                        Sign Up
+                      </button>
+                    </>
+                  ) : (
+                    <button
+                      onClick={logOut}
+                      className="w-full bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-500/70 z-50"
+                    >
+                      Log Out
+                    </button>
+                  )}
                 </div>
               </div>
             </motion.div>
