@@ -202,8 +202,7 @@ export default function Trips() {
             ease: "easeInOut",
           }}
           className="text-8xl mb-4"
-        >
-        </motion.div>
+        ></motion.div>
 
         {/* Floating elements around the plane */}
         <motion.div
@@ -217,9 +216,9 @@ export default function Trips() {
             repeat: Infinity,
             delay: 0.5,
           }}
-          className="absolute -top-4 -right-8 text-3xl"
+          className="absolute -top-4 -right-8 text-5xl"
         >
-          ☁️
+          ✈️
         </motion.div>
 
         <motion.div
@@ -234,8 +233,7 @@ export default function Trips() {
             delay: 1,
           }}
           className="absolute -bottom-2 -left-8 text-2xl"
-        >
-        </motion.div>
+        ></motion.div>
 
         <motion.div
           animate={{
@@ -248,8 +246,7 @@ export default function Trips() {
             delay: 1.5,
           }}
           className="absolute top-2 left-12 text-xl"
-        >
-        </motion.div>
+        ></motion.div>
       </div>
 
       {/* Main Content */}

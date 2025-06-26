@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import React from "react";
 import { useParams } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import { addMyTrip } from "../api";
 
 function Trip() {
   let { id } = useParams();
+  const navigate = useNavigate();
   const [trips, setTrips] = useState([]);
   const [showNotification, setShowNotification] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -34,6 +35,20 @@ function Trip() {
       setLoading(false);
     }
   };
+
+  function addTripAndCheckout(trip) {
+    setShowNotification(true);
+    console.log("Adding trip to list and navigating to checkout");
+    setTimeout(() => setShowNotification(false), 3000);
+    addMyTrip(trip.id)
+      .then(() => {
+        navigate("/checkout");
+      })
+      .catch((err) => {
+        console.error("Failed to add trip to list:", err);
+        alert("Failed to add trip to list. Please try again.");
+      });
+  }
 
   function addToTripList(trip) {
     setShowNotification(true);
@@ -93,8 +108,7 @@ function Trip() {
             animate={{ scale: 1 }}
             transition={{ delay: 0.7, type: "spring", stiffness: 300 }}
             className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-full p-3 shadow-lg"
-          >
-          </motion.div>
+          ></motion.div>
         </div>
 
         {/* Content Section */}
@@ -158,13 +172,9 @@ function Trip() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="flex-1 bg-gradient-to-r from-emerald-500 to-green-600 text-white py-4 px-8 rounded-2xl font-semibold text-lg hover:from-emerald-600 hover:to-green-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+              onClick={() => addTripAndCheckout(t)}
             >
-              <a
-                href={`/Checkout`}
-                className="flex items-center justify-center gap-3"
-              >
-                Book Now
-              </a>
+              Book Now
             </motion.button>
           </motion.div>
 
@@ -218,8 +228,7 @@ function Trip() {
               scale: { duration: 1, repeat: Infinity, ease: "easeInOut" },
             }}
             className="text-6xl"
-          >
-          </motion.div>
+          ></motion.div>
         </div>
       </>
     );
