@@ -364,8 +364,8 @@ export default function Trips() {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 className="relative max-w-md mx-auto mb-12"
               >
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <span className="text-gray-400 text-xl">🔍</span>
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <img className="w-5 z-50 h-5" src="/search.svg" alt="" />
                 </div>
                 <input
                   type="text"
